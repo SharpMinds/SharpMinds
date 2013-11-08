@@ -1,0 +1,1413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FortunaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FortunaModelStoreContainer">
+          <EntitySet Name="Bank" EntityType="FortunaModel.Store.Bank" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Bemaerkning" EntityType="FortunaModel.Store.Bemaerkning" store:Type="Tables" store:Schema="Fortuna" store:Name="Bemaerkning">
+            <DefiningQuery>SELECT
+      `Bemaerkning`.`idBemaerkning`, 
+      `Bemaerkning`.`StatiskValg`, 
+      `Bemaerkning`.`Bemaerkning`, 
+      `Bemaerkning`.`Dato`, 
+      `Bemaerkning`.`OprettetAf`, 
+      `Bemaerkning`.`AendretAf`, 
+      `Bemaerkning`.`AendretDato`, 
+      `Bemaerkning`.`VariableValg`
+      FROM `Bemaerkning` AS `Bemaerkning`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Faelles_Forhandler" EntityType="FortunaModel.Store.Faelles_Forhandler" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Faelles_Spiller" EntityType="FortunaModel.Store.Faelles_Spiller" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Forhandler" EntityType="FortunaModel.Store.Forhandler" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="LodSeddel" EntityType="FortunaModel.Store.LodSeddel" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="PeriodeSkift" EntityType="FortunaModel.Store.PeriodeSkift" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Posteringer" EntityType="FortunaModel.Store.Posteringer" store:Type="Tables" store:Schema="Fortuna" store:Name="Posteringer">
+            <DefiningQuery>SELECT
+      `Posteringer`.`idPosteringer`, 
+      `Posteringer`.`Dato`, 
+      `Posteringer`.`Beloeb`, 
+      `Posteringer`.`Tekst`, 
+      `Posteringer`.`Kategori`, 
+      `Posteringer`.`Periode`, 
+      `Posteringer`.`OprettetAf`, 
+      `Posteringer`.`AendretAf`, 
+      `Posteringer`.`AendretDato`
+      FROM `Posteringer` AS `Posteringer`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PostNumre" EntityType="FortunaModel.Store.PostNumre" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Satser" EntityType="FortunaModel.Store.Satser" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Spiller" EntityType="FortunaModel.Store.Spiller" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="Tekster" EntityType="FortunaModel.Store.Tekster" store:Type="Tables" Schema="Fortuna" />
+          <EntitySet Name="TeksterBreve" EntityType="FortunaModel.Store.TeksterBreve" store:Type="Tables" store:Schema="Fortuna" store:Name="TeksterBreve">
+            <DefiningQuery>SELECT
+      `TeksterBreve`.`ForhandlerNummer`, 
+      `TeksterBreve`.`Serie`, 
+      `TeksterBreve`.`Traekning`, 
+      `TeksterBreve`.`CVR-LL`, 
+      `TeksterBreve`.`ForhandlerNavn`, 
+      `TeksterBreve`.`ForhandlerAdresse`, 
+      `TeksterBreve`.`ForhandlerPostNummer`, 
+      `TeksterBreve`.`ForhandlerBy`, 
+      `TeksterBreve`.`CPR_CVR`, 
+      `TeksterBreve`.`PeriodeStart`, 
+      `TeksterBreve`.`PeriodeSlut`, 
+      `TeksterBreve`.`SalgTrk1`, 
+      `TeksterBreve`.`SalgTrk2`, 
+      `TeksterBreve`.`SalgTrk3`, 
+      `TeksterBreve`.`SalgTrk4`, 
+      `TeksterBreve`.`SalgTrk5`, 
+      `TeksterBreve`.`SalgTrk6`, 
+      `TeksterBreve`.`SalgAntalHele1`, 
+      `TeksterBreve`.`SalgAntalHele2`, 
+      `TeksterBreve`.`SalgAntalHele3`, 
+      `TeksterBreve`.`SalgAntalHele4`, 
+      `TeksterBreve`.`SalgAntalHele5`, 
+      `TeksterBreve`.`SalgAntalHele6`, 
+      `TeksterBreve`.`SalgAntalHalve1`, 
+      `TeksterBreve`.`SalgAntalHalve2`, 
+      `TeksterBreve`.`SalgAntalHalve3`, 
+      `TeksterBreve`.`SalgAntalHalve4`, 
+      `TeksterBreve`.`SalgAntalHalve5`, 
+      `TeksterBreve`.`SalgAntalHalve6`, 
+      `TeksterBreve`.`SalgAntalPbsHele`, 
+      `TeksterBreve`.`SalgAntalPbsHalve`, 
+      `TeksterBreve`.`PrisHel1`, 
+      `TeksterBreve`.`PrisHel2`, 
+      `TeksterBreve`.`PrisHel3`, 
+      `TeksterBreve`.`PrisHel4`, 
+      `TeksterBreve`.`PrisHel5`, 
+      `TeksterBreve`.`PrisHel6`, 
+      `TeksterBreve`.`PrisHalv1`, 
+      `TeksterBreve`.`PrisHalv2`, 
+      `TeksterBreve`.`PrisHalv3`, 
+      `TeksterBreve`.`PrisHalv4`, 
+      `TeksterBreve`.`PrisHalv5`, 
+      `TeksterBreve`.`PrisHalv6`, 
+      `TeksterBreve`.`PrisHelPbs`, 
+      `TeksterBreve`.`PrisHalvPbs`, 
+      `TeksterBreve`.`SalgTrkPbs`, 
+      `TeksterBreve`.`SalgPrisHel1`, 
+      `TeksterBreve`.`SalgPrisHel2`, 
+      `TeksterBreve`.`SalgPrisHel3`, 
+      `TeksterBreve`.`SalgPrisHel4`, 
+      `TeksterBreve`.`SalgPrisHel5`, 
+      `TeksterBreve`.`SalgPrisHel6`, 
+      `TeksterBreve`.`SalgPrisHalv1`, 
+      `TeksterBreve`.`SalgPrisHalv2`, 
+      `TeksterBreve`.`SalgPrisHalv3`, 
+      `TeksterBreve`.`SalgPrisHalv4`, 
+      `TeksterBreve`.`SalgPrisHalv5`, 
+      `TeksterBreve`.`SalgPrisHalv6`, 
+      `TeksterBreve`.`SalgPrisPbsHele`, 
+      `TeksterBreve`.`SalgPrisPbsHalve`, 
+      `TeksterBreve`.`SalgPrisIalt1`, 
+      `TeksterBreve`.`SalgPrisIalt2`, 
+      `TeksterBreve`.`SalgPrisIalt3`, 
+      `TeksterBreve`.`SalgPrisIalt4`, 
+      `TeksterBreve`.`SalgPrisIalt5`, 
+      `TeksterBreve`.`SalgPrisIalt6`, 
+      `TeksterBreve`.`SalgPrisIalt`, 
+      `TeksterBreve`.`SalgPrisIaltPbs`, 
+      `TeksterBreve`.`ProvisionProcent`, 
+      `TeksterBreve`.`ProvisionPbsProcent`, 
+      `TeksterBreve`.`ProvisionSalg`, 
+      `TeksterBreve`.`ProvisionPbs`, 
+      `TeksterBreve`.`ProvisionTilMoms`, 
+      `TeksterBreve`.`MomsProcent`, 
+      `TeksterBreve`.`MomsBeloeb`, 
+      `TeksterBreve`.`ProvisionInclMoms`, 
+      `TeksterBreve`.`UdbetalteGevinster`, 
+      `TeksterBreve`.`TidligereSaldo`, 
+      `TeksterBreve`.`Posteringer`, 
+      `TeksterBreve`.`BeloebIalt`, 
+      `TeksterBreve`.`Postering1`, 
+      `TeksterBreve`.`Postering2`, 
+      `TeksterBreve`.`Postering3`, 
+      `TeksterBreve`.`Postering4`, 
+      `TeksterBreve`.`Postering5`, 
+      `TeksterBreve`.`ProvisionAarTilDato`
+      FROM `TeksterBreve` AS `TeksterBreve`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Temp" EntityType="FortunaModel.Store.Temp" store:Type="Tables" store:Schema="Fortuna" store:Name="Temp">
+            <DefiningQuery>SELECT
+      `Temp`.`ID`, 
+      `Temp`.`Tekst1`, 
+      `Temp`.`Tekst2`
+      FROM `Temp` AS `Temp`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="timingtry" EntityType="FortunaModel.Store.timingtry" store:Type="Tables" store:Schema="Fortuna" store:Name="timingtry">
+            <DefiningQuery>SELECT
+      `timingtry`.`nummer`, 
+      `timingtry`.`navn`, 
+      `timingtry`.`dato`
+      FROM `timingtry` AS `timingtry`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Traekning" EntityType="FortunaModel.Store.Traekning" store:Type="Tables" Schema="Fortuna" />
+        </EntityContainer>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="idBank" />
+          </Key>
+          <Property Name="idBank" Type="int" Nullable="false" />
+          <Property Name="BankNavn" Type="varchar" MaxLength="45" />
+          <Property Name="BankAdresse" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.Fortuna.Bemaerkning' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Bemaerkning">
+          <Key>
+            <PropertyRef Name="idBemaerkning" />
+            <PropertyRef Name="StatiskValg" />
+          </Key>
+          <Property Name="idBemaerkning" Type="int" Nullable="false" />
+          <Property Name="StatiskValg" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Bemaerkning" Type="text" />
+          <Property Name="Dato" Type="timestamp" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+          <Property Name="VariableValg" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Faelles_Forhandler">
+          <Key>
+            <PropertyRef Name="number" />
+          </Key>
+          <Property Name="number" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="text" />
+          <Property Name="address" Type="text" />
+          <Property Name="Zip" Type="text" />
+          <Property Name="city" Type="text" />
+          <Property Name="country" Type="text" />
+          <Property Name="email" Type="text" />
+          <Property Name="telephone" Type="text" />
+          <Property Name="notes" Type="text" />
+          <Property Name="ll_number" Type="uint" />
+          <Property Name="vl_number" Type="uint" />
+          <Property Name="terminal" Type="uint" />
+          <Property Name="pin" Type="text" />
+          <Property Name="login_id" Type="text" />
+          <Property Name="terminal2" Type="uint" />
+        </EntityType>
+        <EntityType Name="Faelles_Spiller">
+          <Key>
+            <PropertyRef Name="number" />
+          </Key>
+          <Property Name="number" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="text" />
+          <Property Name="address1" Type="text" />
+          <Property Name="address2" Type="text" />
+          <Property Name="Zip" Type="text" />
+          <Property Name="city" Type="text" />
+          <Property Name="country" Type="text" />
+          <Property Name="email" Type="text" />
+          <Property Name="telephone" Type="text" />
+          <Property Name="mobile" Type="text" />
+          <Property Name="giro" Type="bool" />
+          <Property Name="notes" Type="text" />
+          <Property Name="terminal" Type="int" />
+          <Property Name="ll_customer" Type="bool" />
+          <Property Name="vl_customer" Type="bool" />
+          <Property Name="inactive" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Forhandler">
+          <Key>
+            <PropertyRef Name="ForhandlerNummer" />
+          </Key>
+          <Property Name="ForhandlerNummer" Type="int" Nullable="false" />
+          <Property Name="Navn" Type="varchar" MaxLength="45" />
+          <Property Name="Forretning" Type="varchar" MaxLength="45" />
+          <Property Name="ForhAdresse1" Type="varchar" MaxLength="45" />
+          <Property Name="ForhAdresse2" Type="varchar" MaxLength="45" />
+          <Property Name="ForhPostnummer" Type="varchar" MaxLength="10" />
+          <Property Name="ForhBy" Type="varchar" MaxLength="45" />
+          <Property Name="ForhLand" Type="varchar" MaxLength="45" />
+          <Property Name="ForhTelefon" Type="bigint" />
+          <Property Name="ForhMobil" Type="bigint" />
+          <Property Name="ForhMail" Type="varchar" MaxLength="45" />
+          <Property Name="ForhWeb" Type="varchar" MaxLength="45" />
+          <Property Name="PrivAdresse1" Type="varchar" MaxLength="45" />
+          <Property Name="PrivAdresse2" Type="varchar" MaxLength="45" />
+          <Property Name="PrivPostnummer" Type="varchar" MaxLength="10" />
+          <Property Name="PrivBy" Type="varchar" MaxLength="45" />
+          <Property Name="PrivLand" Type="varchar" MaxLength="45" />
+          <Property Name="PrivTelefon" Type="bigint" />
+          <Property Name="PrivMobil" Type="bigint" />
+          <Property Name="PrivMail" Type="varchar" MaxLength="45" />
+          <Property Name="PrivWeb" Type="varchar" MaxLength="45" />
+          <Property Name="CPR" Type="bigint" />
+          <Property Name="CVR" Type="bigint" />
+          <Property Name="CPR-CVR" Type="bool" />
+          <Property Name="Moms" Type="bool" />
+          <Property Name="TiltraedelsesDato" Type="date" />
+          <Property Name="AfgangsDato" Type="date" />
+          <Property Name="FlyttetFra" Type="int" />
+          <Property Name="FlyttetFraDato" Type="date" />
+          <Property Name="FlyttetTil" Type="int" />
+          <Property Name="FlyttetTilDato" Type="date" />
+          <Property Name="Leverandoerservice" Type="bool" />
+          <Property Name="LevKundenummer" Type="bigint" />
+          <Property Name="AfregningMail" Type="bool" />
+          <Property Name="Oplysninger" Type="longtext" />
+          <Property Name="SalgProvisionSats" Type="decimal" />
+          <Property Name="PosteringerId" Type="int" />
+          <Property Name="ForhandlerKontoRegNr" Type="int" />
+          <Property Name="ForhandlerKontoNr" Type="bigint" />
+          <Property Name="GevinstKontoRegNr" Type="int" />
+          <Property Name="GevinstKontoNr" Type="bigint" />
+          <Property Name="LeverandoerRegNr" Type="int" />
+          <Property Name="LeverandoerKontoNr" Type="bigint" />
+          <Property Name="GiroKontoNr" Type="bigint" />
+          <Property Name="BemaerkningsId" Type="int" />
+          <Property Name="Terminal" Type="int" />
+          <Property Name="Pin" Type="char" MaxLength="4" />
+          <Property Name="LoginId" Type="char" MaxLength="10" />
+          <Property Name="Terminal2" Type="int" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+          <Property Name="BankGaranti" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="LodSeddel">
+          <Key>
+            <PropertyRef Name="idLodSeddel" />
+          </Key>
+          <Property Name="idLodSeddel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LodNummer" Type="int" Nullable="false" />
+          <Property Name="Kategori" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Periode" Type="int" Nullable="false" />
+          <Property Name="Serie" Type="int" />
+          <Property Name="Traekning" Type="int" />
+          <Property Name="Udfaset" Type="bool" />
+          <Property Name="SpillerId" Type="int" />
+          <Property Name="SalgsBerretigetForhandlerId" Type="int" />
+          <Property Name="PrisLow" Type="decimal" Scale="2" />
+          <Property Name="PrisHigh" Type="decimal" Scale="2" />
+          <Property Name="Solgt" Type="bool" />
+          <Property Name="Kontrolciffer" Type="int" />
+          <Property Name="LodseddelPrintet" Type="bool" />
+          <Property Name="SaelgendeForhandlerId" Type="int" />
+          <Property Name="SalgsDato" Type="timestamp" />
+          <Property Name="Reserveret" Type="bool" />
+          <Property Name="Blokeret" Type="bool" />
+          <Property Name="PbsSpiller" Type="bool" />
+          <Property Name="PbsAftaleNummer" Type="int" />
+          <Property Name="PbsRegNr" Type="int" />
+          <Property Name="PbsKontoNummer" Type="bigint" />
+          <Property Name="PbsBankId" Type="varchar" MaxLength="30" />
+          <Property Name="PbsProvisionsForhandlerId" Type="int" />
+          <Property Name="PbsProvisionsDato" Type="timestamp" />
+          <Property Name="PbsProvisionsSats" Type="decimal" Scale="2" />
+          <Property Name="Gevinst1" Type="decimal" Nullable="false" Precision="15" Scale="2" />
+          <Property Name="GevinstUdbetaltManuelt1" Type="bool" />
+          <Property Name="GevinstUdbetaltDato1" Type="timestamp" />
+          <Property Name="GevinstAfregningsDato1" Type="timestamp" />
+          <Property Name="ForaeldetGevinst1" Type="bool" />
+          <Property Name="ForaeldetGevinsDato1" Type="timestamp" />
+          <Property Name="GevinstUdbetaltForhandler1" Type="int" />
+          <Property Name="Gevinst2" Type="decimal" Nullable="false" Precision="15" Scale="2" />
+          <Property Name="GevinstUdbetaltManuelt2" Type="bool" />
+          <Property Name="GevinstUdbetaltDato2" Type="timestamp" />
+          <Property Name="GevinstAfregningsDato2" Type="timestamp" />
+          <Property Name="ForaeldetGevinst2" Type="bool" />
+          <Property Name="ForaeldetGevinsDato2" Type="timestamp" />
+          <Property Name="GevinstUdbetaltForhandler2" Type="int" />
+          <Property Name="SidstVist" Type="timestamp" />
+          <Property Name="TagetTilIndtaegt" Type="bool" />
+          <Property Name="AfregningsDato" Type="timestamp" />
+          <Property Name="HistorikId" Type="int" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+          <Property Name="ResNySerie" Type="bool" />
+          <Property Name="PbsAfmeldtBank" Type="bool" />
+          <Property Name="RegSalg" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="PeriodeSkift">
+          <Key>
+            <PropertyRef Name="Periode" />
+          </Key>
+          <Property Name="Periode" Type="int" Nullable="false" />
+          <Property Name="Dato" Type="date" />
+          <Property Name="Serie" Type="int" Nullable="false" />
+          <Property Name="StartDato" Type="date" />
+          <Property Name="SlutDato" Type="date" />
+          <Property Name="AfregningsDato" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.Fortuna.Posteringer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Posteringer">
+          <Key>
+            <PropertyRef Name="idPosteringer" />
+          </Key>
+          <Property Name="idPosteringer" Type="int" Nullable="false" />
+          <Property Name="Dato" Type="date" />
+          <Property Name="Beloeb" Type="decimal" Scale="2" />
+          <Property Name="Tekst" Type="varchar" MaxLength="45" />
+          <Property Name="Kategori" Type="int" />
+          <Property Name="Periode" Type="int" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PostNumre">
+          <Key>
+            <PropertyRef Name="Postnummer" />
+          </Key>
+          <Property Name="Postnummer" Type="int" Nullable="false" />
+          <Property Name="By" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Satser">
+          <Key>
+            <PropertyRef Name="idSatser" />
+          </Key>
+          <Property Name="idSatser" Type="int" Nullable="false" />
+          <Property Name="SatsBeskrivelse" Type="varchar" MaxLength="45" />
+          <Property Name="Sats" Type="decimal" Scale="2" />
+          <Property Name="Dato" Type="date" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+          <Property Name="Var" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Spiller">
+          <Key>
+            <PropertyRef Name="idSpiller" />
+          </Key>
+          <Property Name="idSpiller" Type="int" Nullable="false" />
+          <Property Name="Fornavn" Type="varchar" MaxLength="45" />
+          <Property Name="Efternavn" Type="varchar" MaxLength="45" />
+          <Property Name="Adresse1" Type="varchar" MaxLength="45" />
+          <Property Name="Adresse2" Type="varchar" MaxLength="45" />
+          <Property Name="PostNummerId" Type="varchar" MaxLength="10" />
+          <Property Name="By" Type="varchar" MaxLength="45" />
+          <Property Name="Land" Type="varchar" MaxLength="45" />
+          <Property Name="Telefon" Type="bigint" />
+          <Property Name="Mobil" Type="bigint" />
+          <Property Name="Mail" Type="varchar" MaxLength="45" />
+          <Property Name="Web" Type="varchar" MaxLength="45" />
+          <Property Name="OprettelsesDato" Type="date" />
+          <Property Name="AfgangsDato" Type="date" />
+          <Property Name="Noter" Type="varchar" MaxLength="45" />
+          <Property Name="FoedtDato" Type="varchar" MaxLength="10" />
+          <Property Name="BemaerkningsId" Type="int" />
+          <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+          <Property Name="AendretDato" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="Tekster">
+          <Key>
+            <PropertyRef Name="idTekster" />
+          </Key>
+          <Property Name="idTekster" Type="int" Nullable="false" />
+          <Property Name="Art" Type="int" />
+          <Property Name="Navn" Type="varchar" MaxLength="45" />
+          <Property Name="Tekst" Type="varchar" MaxLength="25" />
+          <Property Name="Vaerdi" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.Fortuna.TeksterBreve' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TeksterBreve">
+          <Key>
+            <PropertyRef Name="SalgPrisIalt2" />
+          </Key>
+          <Property Name="ForhandlerNummer" Type="varchar" MaxLength="10" />
+          <Property Name="Serie" Type="int" />
+          <Property Name="Traekning" Type="int" />
+          <Property Name="CVR-LL" Type="varchar" MaxLength="12" />
+          <Property Name="ForhandlerNavn" Type="varchar" MaxLength="50" />
+          <Property Name="ForhandlerAdresse" Type="varchar" MaxLength="50" />
+          <Property Name="ForhandlerPostNummer" Type="varchar" MaxLength="10" />
+          <Property Name="ForhandlerBy" Type="varchar" MaxLength="20" />
+          <Property Name="CPR_CVR" Type="varchar" MaxLength="12" />
+          <Property Name="PeriodeStart" Type="date" />
+          <Property Name="PeriodeSlut" Type="date" />
+          <Property Name="SalgTrk1" Type="varchar" MaxLength="10" />
+          <Property Name="SalgTrk2" Type="varchar" MaxLength="10" />
+          <Property Name="SalgTrk3" Type="varchar" MaxLength="10" />
+          <Property Name="SalgTrk4" Type="varchar" MaxLength="10" />
+          <Property Name="SalgTrk5" Type="varchar" MaxLength="10" />
+          <Property Name="SalgTrk6" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele1" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele2" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele3" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele4" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele5" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHele6" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve1" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve2" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve3" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve4" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve5" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalHalve6" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalPbsHele" Type="varchar" MaxLength="10" />
+          <Property Name="SalgAntalPbsHalve" Type="varchar" MaxLength="10" />
+          <Property Name="PrisHel1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHel2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHel3" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHel4" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHel5" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHel6" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv3" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv4" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv5" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalv6" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHelPbs" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PrisHalvPbs" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SalgTrkPbs" Type="varchar" MaxLength="10" />
+          <Property Name="SalgPrisHel1" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHel2" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHel3" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHel4" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHel5" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHel6" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv1" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv2" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv3" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv4" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv5" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisHalv6" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisPbsHele" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisPbsHalve" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt1" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt2" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="SalgPrisIalt3" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt4" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt5" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt6" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIalt" Type="decimal" Scale="2" />
+          <Property Name="SalgPrisIaltPbs" Type="decimal" Scale="2" />
+          <Property Name="ProvisionProcent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="ProvisionPbsProcent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="ProvisionSalg" Type="decimal" Scale="2" />
+          <Property Name="ProvisionPbs" Type="decimal" Scale="2" />
+          <Property Name="ProvisionTilMoms" Type="decimal" Scale="2" />
+          <Property Name="MomsProcent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="MomsBeloeb" Type="decimal" Scale="2" />
+          <Property Name="ProvisionInclMoms" Type="decimal" Scale="2" />
+          <Property Name="UdbetalteGevinster" Type="decimal" Scale="2" />
+          <Property Name="TidligereSaldo" Type="decimal" Scale="2" />
+          <Property Name="Posteringer" Type="decimal" Scale="2" />
+          <Property Name="BeloebIalt" Type="decimal" Scale="2" />
+          <Property Name="Postering1" Type="varchar" MaxLength="100" />
+          <Property Name="Postering2" Type="varchar" MaxLength="100" />
+          <Property Name="Postering3" Type="varchar" MaxLength="100" />
+          <Property Name="Postering4" Type="varchar" MaxLength="100" />
+          <Property Name="Postering5" Type="varchar" MaxLength="100" />
+          <Property Name="ProvisionAarTilDato" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.Fortuna.Temp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="timestamp" Nullable="false" />
+          <Property Name="Tekst1" Type="longtext" />
+          <Property Name="Tekst2" Type="longtext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.Fortuna.timingtry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="timingtry">
+          <Key>
+            <PropertyRef Name="nummer" />
+            <PropertyRef Name="navn" />
+            <PropertyRef Name="dato" />
+          </Key>
+          <Property Name="nummer" Type="uint" Nullable="false" />
+          <Property Name="navn" Type="text" Nullable="false" />
+          <Property Name="dato" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Traekning">
+          <Key>
+            <PropertyRef Name="Periode" />
+          </Key>
+          <Property Name="Periode" Type="int" Nullable="false" />
+          <Property Name="LodseddelNummer" Type="int" />
+          <Property Name="Beloeb" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'def.Fortuna.Afregninger' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Afregninger">
+        <Property Name="Periode" Type="int" />
+        <Property Name="AfregningForhandler" Type="int" />
+        <Property Name="Hele" Type="varchar" MaxLength="50" />
+        <Property Name="Halve" Type="varchar" MaxLength="50" />
+        <Property Name="PBS" Type="varchar" MaxLength="50" />
+        <Property Name="Gevinster" Type="decimal" Scale="2" />
+        <Property Name="OprettetAf" Type="varchar" MaxLength="45" />
+        <Property Name="AendretAf" Type="varchar" MaxLength="45" />
+        <Property Name="AendretDato" Type="timestamp" />
+        <Property Name="SamletProvisionPeriode" Type="decimal" Scale="2" />
+        <Property Name="SamletAfregningsBeloeb" Type="decimal" Scale="2" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'def.Fortuna.LLTraek' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LLTraek">
+        <Property Name="Serie" Type="int" />
+        <Property Name="Traekning" Type="int" />
+        <Property Name="Nummer" Type="varchar" MaxLength="15" />
+        <Property Name="Gevinst" Type="varchar" MaxLength="1" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'def.Fortuna.RegistreretSalg' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="RegistreretSalg">
+        <Property Name="Periode" Type="int" />
+        <Property Name="SolgtHalve" Type="decimal" Scale="2" />
+        <Property Name="SolgtHele" Type="decimal" Scale="2" />
+        <Property Name="SolgtIalt" Type="decimal" Scale="2" />
+        <Property Name="SolgtGGHalve" Type="decimal" Scale="2" />
+        <Property Name="SolgtGGHele" Type="decimal" Scale="2" />
+        <Property Name="SolgtGGIalt" Type="decimal" Scale="2" />
+        <Property Name="SolgtNSHalve" Type="decimal" Scale="2" />
+        <Property Name="SolgtNSHele" Type="decimal" Scale="2" />
+        <Property Name="SolgtNSIalt" Type="decimal" Scale="2" />
+        <Property Name="LodsedlerHalve" Type="int" />
+        <Property Name="LodsedlerHele" Type="int" />
+        <Property Name="LodsedlerIalt" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'def.Fortuna.Temp_Gevinster' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Temp_Gevinster">
+        <Property Name="Serie" Type="int" />
+        <Property Name="Traekning" Type="int" />
+        <Property Name="SalgsBerettigetForhandler" Type="int" />
+        <Property Name="LodNummer" Type="varchar" MaxLength="10" />
+        <Property Name="SpillerId" Type="int" />
+        <Property Name="GevinstBeloeb" Type="decimal" Scale="2" />
+        <Property Name="GevinstUdbetaltDato" Type="varchar" MaxLength="8" />
+        <Property Name="GevinstUdbetaltForhandler" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'def.Fortuna.VLTraek' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="VLTraek">
+        <Property Name="Serie" Type="int" />
+        <Property Name="Traekning" Type="int" />
+        <Property Name="Nummer" Type="int" />
+        <Property Name="Gevinst" Type="varchar" MaxLength="1" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FortunaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FortunaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Bank" EntityType="FortunaModel.Bank" />
+          <EntitySet Name="Bemaerkning" EntityType="FortunaModel.Bemaerkning" />
+          <EntitySet Name="Faelles_Forhandler" EntityType="FortunaModel.Faelles_Forhandler" />
+          <EntitySet Name="Faelles_Spiller" EntityType="FortunaModel.Faelles_Spiller" />
+          <EntitySet Name="Forhandler" EntityType="FortunaModel.Forhandler" />
+          <EntitySet Name="LodSeddel" EntityType="FortunaModel.LodSeddel" />
+          <EntitySet Name="PeriodeSkift" EntityType="FortunaModel.PeriodeSkift" />
+          <EntitySet Name="Posteringer" EntityType="FortunaModel.Posteringer" />
+          <EntitySet Name="PostNumre" EntityType="FortunaModel.PostNumre" />
+          <EntitySet Name="Satser" EntityType="FortunaModel.Satser" />
+          <EntitySet Name="Spiller" EntityType="FortunaModel.Spiller" />
+          <EntitySet Name="Tekster" EntityType="FortunaModel.Tekster" />
+          <EntitySet Name="TeksterBreve" EntityType="FortunaModel.TeksterBreve" />
+          <EntitySet Name="Temp" EntityType="FortunaModel.Temp" />
+          <EntitySet Name="timingtry" EntityType="FortunaModel.timingtry" />
+          <EntitySet Name="Traekning" EntityType="FortunaModel.Traekning" />
+        </EntityContainer>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="idBank" />
+          </Key>
+          <Property Name="idBank" Type="Int32" Nullable="false" />
+          <Property Name="BankNavn" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="BankAdresse" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Bemaerkning">
+          <Key>
+            <PropertyRef Name="idBemaerkning" />
+            <PropertyRef Name="StatiskValg" />
+          </Key>
+          <Property Name="idBemaerkning" Type="Int32" Nullable="false" />
+          <Property Name="StatiskValg" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Bemaerkning1" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Dato" Type="DateTime" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+          <Property Name="VariableValg" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Faelles_Forhandler">
+          <Key>
+            <PropertyRef Name="number" />
+          </Key>
+          <Property Name="number" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="telephone" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="notes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="ll_number" Type="Int64" />
+          <Property Name="vl_number" Type="Int64" />
+          <Property Name="terminal" Type="Int64" />
+          <Property Name="pin" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="login_id" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="terminal2" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Faelles_Spiller">
+          <Key>
+            <PropertyRef Name="number" />
+          </Key>
+          <Property Name="number" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="address1" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="address2" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="telephone" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="giro" Type="Boolean" />
+          <Property Name="notes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="terminal" Type="Int32" />
+          <Property Name="ll_customer" Type="Boolean" />
+          <Property Name="vl_customer" Type="Boolean" />
+          <Property Name="inactive" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Forhandler">
+          <Key>
+            <PropertyRef Name="ForhandlerNummer" />
+          </Key>
+          <Property Name="ForhandlerNummer" Type="Int32" Nullable="false" />
+          <Property Name="Navn" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Forretning" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhAdresse1" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhAdresse2" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhPostnummer" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ForhBy" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhLand" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhTelefon" Type="Int64" />
+          <Property Name="ForhMobil" Type="Int64" />
+          <Property Name="ForhMail" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="ForhWeb" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivAdresse1" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivAdresse2" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivPostnummer" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PrivBy" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivLand" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivTelefon" Type="Int64" />
+          <Property Name="PrivMobil" Type="Int64" />
+          <Property Name="PrivMail" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PrivWeb" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="CPR" Type="Int64" />
+          <Property Name="CVR" Type="Int64" />
+          <Property Name="CPR_CVR" Type="Boolean" />
+          <Property Name="Moms" Type="Boolean" />
+          <Property Name="TiltraedelsesDato" Type="DateTime" />
+          <Property Name="AfgangsDato" Type="DateTime" />
+          <Property Name="FlyttetFra" Type="Int32" />
+          <Property Name="FlyttetFraDato" Type="DateTime" />
+          <Property Name="FlyttetTil" Type="Int32" />
+          <Property Name="FlyttetTilDato" Type="DateTime" />
+          <Property Name="Leverandoerservice" Type="Boolean" />
+          <Property Name="LevKundenummer" Type="Int64" />
+          <Property Name="AfregningMail" Type="Boolean" />
+          <Property Name="Oplysninger" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="SalgProvisionSats" Type="Decimal" />
+          <Property Name="PosteringerId" Type="Int32" />
+          <Property Name="ForhandlerKontoRegNr" Type="Int32" />
+          <Property Name="ForhandlerKontoNr" Type="Int64" />
+          <Property Name="GevinstKontoRegNr" Type="Int32" />
+          <Property Name="GevinstKontoNr" Type="Int64" />
+          <Property Name="LeverandoerRegNr" Type="Int32" />
+          <Property Name="LeverandoerKontoNr" Type="Int64" />
+          <Property Name="GiroKontoNr" Type="Int64" />
+          <Property Name="BemaerkningsId" Type="Int32" />
+          <Property Name="Terminal" Type="Int32" />
+          <Property Name="Pin" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="LoginId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Terminal2" Type="Int32" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+          <Property Name="BankGaranti" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="LodSeddel">
+          <Key>
+            <PropertyRef Name="idLodSeddel" />
+          </Key>
+          <Property Name="idLodSeddel" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LodNummer" Type="Int32" Nullable="false" />
+          <Property Name="Kategori" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Periode" Type="Int32" Nullable="false" />
+          <Property Name="Serie" Type="Int32" />
+          <Property Name="Traekning" Type="Int32" />
+          <Property Name="Udfaset" Type="Boolean" />
+          <Property Name="SpillerId" Type="Int32" />
+          <Property Name="SalgsBerretigetForhandlerId" Type="Int32" />
+          <Property Name="PrisLow" Type="Decimal" />
+          <Property Name="PrisHigh" Type="Decimal" />
+          <Property Name="Solgt" Type="Boolean" />
+          <Property Name="Kontrolciffer" Type="Int32" />
+          <Property Name="LodseddelPrintet" Type="Boolean" />
+          <Property Name="SaelgendeForhandlerId" Type="Int32" />
+          <Property Name="SalgsDato" Type="DateTime" />
+          <Property Name="Reserveret" Type="Boolean" />
+          <Property Name="Blokeret" Type="Boolean" />
+          <Property Name="PbsSpiller" Type="Boolean" />
+          <Property Name="PbsAftaleNummer" Type="Int32" />
+          <Property Name="PbsRegNr" Type="Int32" />
+          <Property Name="PbsKontoNummer" Type="Int64" />
+          <Property Name="PbsBankId" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PbsProvisionsForhandlerId" Type="Int32" />
+          <Property Name="PbsProvisionsDato" Type="DateTime" />
+          <Property Name="PbsProvisionsSats" Type="Decimal" />
+          <Property Name="Gevinst1" Type="Decimal" Nullable="false" />
+          <Property Name="GevinstUdbetaltManuelt1" Type="Boolean" />
+          <Property Name="GevinstUdbetaltDato1" Type="DateTime" />
+          <Property Name="GevinstAfregningsDato1" Type="DateTime" />
+          <Property Name="ForaeldetGevinst1" Type="Boolean" />
+          <Property Name="ForaeldetGevinsDato1" Type="DateTime" />
+          <Property Name="GevinstUdbetaltForhandler1" Type="Int32" />
+          <Property Name="Gevinst2" Type="Decimal" Nullable="false" />
+          <Property Name="GevinstUdbetaltManuelt2" Type="Boolean" />
+          <Property Name="GevinstUdbetaltDato2" Type="DateTime" />
+          <Property Name="GevinstAfregningsDato2" Type="DateTime" />
+          <Property Name="ForaeldetGevinst2" Type="Boolean" />
+          <Property Name="ForaeldetGevinsDato2" Type="DateTime" />
+          <Property Name="GevinstUdbetaltForhandler2" Type="Int32" />
+          <Property Name="SidstVist" Type="DateTime" />
+          <Property Name="TagetTilIndtaegt" Type="Boolean" />
+          <Property Name="AfregningsDato" Type="DateTime" />
+          <Property Name="HistorikId" Type="Int32" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+          <Property Name="ResNySerie" Type="Boolean" />
+          <Property Name="PbsAfmeldtBank" Type="Boolean" />
+          <Property Name="RegSalg" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PeriodeSkift">
+          <Key>
+            <PropertyRef Name="Periode" />
+          </Key>
+          <Property Name="Periode" Type="Int32" Nullable="false" />
+          <Property Name="Dato" Type="DateTime" />
+          <Property Name="Serie" Type="Int32" Nullable="false" />
+          <Property Name="StartDato" Type="DateTime" />
+          <Property Name="SlutDato" Type="DateTime" />
+          <Property Name="AfregningsDato" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Posteringer">
+          <Key>
+            <PropertyRef Name="idPosteringer" />
+          </Key>
+          <Property Name="idPosteringer" Type="Int32" Nullable="false" />
+          <Property Name="Dato" Type="DateTime" />
+          <Property Name="Beloeb" Type="Decimal" />
+          <Property Name="Tekst" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Kategori" Type="Int32" />
+          <Property Name="Periode" Type="Int32" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="PostNumre">
+          <Key>
+            <PropertyRef Name="Postnummer" />
+          </Key>
+          <Property Name="Postnummer" Type="Int32" Nullable="false" />
+          <Property Name="By" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Satser">
+          <Key>
+            <PropertyRef Name="idSatser" />
+          </Key>
+          <Property Name="idSatser" Type="Int32" Nullable="false" />
+          <Property Name="SatsBeskrivelse" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Sats" Type="Decimal" />
+          <Property Name="Dato" Type="DateTime" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+          <Property Name="Var" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Spiller">
+          <Key>
+            <PropertyRef Name="idSpiller" />
+          </Key>
+          <Property Name="idSpiller" Type="Int32" Nullable="false" />
+          <Property Name="Fornavn" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Efternavn" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Adresse1" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Adresse2" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PostNummerId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="By" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Land" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Telefon" Type="Int64" />
+          <Property Name="Mobil" Type="Int64" />
+          <Property Name="Mail" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Web" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="OprettelsesDato" Type="DateTime" />
+          <Property Name="AfgangsDato" Type="DateTime" />
+          <Property Name="Noter" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="FoedtDato" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="BemaerkningsId" Type="Int32" />
+          <Property Name="OprettetAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretAf" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="AendretDato" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Tekster">
+          <Key>
+            <PropertyRef Name="idTekster" />
+          </Key>
+          <Property Name="idTekster" Type="Int32" Nullable="false" />
+          <Property Name="Art" Type="Int32" />
+          <Property Name="Navn" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Tekst" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Vaerdi" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="TeksterBreve">
+          <Key>
+            <PropertyRef Name="SalgPrisIalt2" />
+          </Key>
+          <Property Name="ForhandlerNummer" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Serie" Type="Int32" />
+          <Property Name="Traekning" Type="Int32" />
+          <Property Name="CVR_LL" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="ForhandlerNavn" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ForhandlerAdresse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ForhandlerPostNummer" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ForhandlerBy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CPR_CVR" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="PeriodeStart" Type="DateTime" />
+          <Property Name="PeriodeSlut" Type="DateTime" />
+          <Property Name="SalgTrk1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgTrk2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgTrk3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgTrk4" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgTrk5" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgTrk6" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele4" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele5" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHele6" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve4" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve5" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalHalve6" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalPbsHele" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgAntalPbsHalve" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PrisHel1" Type="Decimal" />
+          <Property Name="PrisHel2" Type="Decimal" />
+          <Property Name="PrisHel3" Type="Decimal" />
+          <Property Name="PrisHel4" Type="Decimal" />
+          <Property Name="PrisHel5" Type="Decimal" />
+          <Property Name="PrisHel6" Type="Decimal" />
+          <Property Name="PrisHalv1" Type="Decimal" />
+          <Property Name="PrisHalv2" Type="Decimal" />
+          <Property Name="PrisHalv3" Type="Decimal" />
+          <Property Name="PrisHalv4" Type="Decimal" />
+          <Property Name="PrisHalv5" Type="Decimal" />
+          <Property Name="PrisHalv6" Type="Decimal" />
+          <Property Name="PrisHelPbs" Type="Decimal" />
+          <Property Name="PrisHalvPbs" Type="Decimal" />
+          <Property Name="SalgTrkPbs" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SalgPrisHel1" Type="Decimal" />
+          <Property Name="SalgPrisHel2" Type="Decimal" />
+          <Property Name="SalgPrisHel3" Type="Decimal" />
+          <Property Name="SalgPrisHel4" Type="Decimal" />
+          <Property Name="SalgPrisHel5" Type="Decimal" />
+          <Property Name="SalgPrisHel6" Type="Decimal" />
+          <Property Name="SalgPrisHalv1" Type="Decimal" />
+          <Property Name="SalgPrisHalv2" Type="Decimal" />
+          <Property Name="SalgPrisHalv3" Type="Decimal" />
+          <Property Name="SalgPrisHalv4" Type="Decimal" />
+          <Property Name="SalgPrisHalv5" Type="Decimal" />
+          <Property Name="SalgPrisHalv6" Type="Decimal" />
+          <Property Name="SalgPrisPbsHele" Type="Decimal" />
+          <Property Name="SalgPrisPbsHalve" Type="Decimal" />
+          <Property Name="SalgPrisIalt1" Type="Decimal" />
+          <Property Name="SalgPrisIalt2" Type="Decimal" Nullable="false" />
+          <Property Name="SalgPrisIalt3" Type="Decimal" />
+          <Property Name="SalgPrisIalt4" Type="Decimal" />
+          <Property Name="SalgPrisIalt5" Type="Decimal" />
+          <Property Name="SalgPrisIalt6" Type="Decimal" />
+          <Property Name="SalgPrisIalt" Type="Decimal" />
+          <Property Name="SalgPrisIaltPbs" Type="Decimal" />
+          <Property Name="ProvisionProcent" Type="Decimal" />
+          <Property Name="ProvisionPbsProcent" Type="Decimal" />
+          <Property Name="ProvisionSalg" Type="Decimal" />
+          <Property Name="ProvisionPbs" Type="Decimal" />
+          <Property Name="ProvisionTilMoms" Type="Decimal" />
+          <Property Name="MomsProcent" Type="Decimal" />
+          <Property Name="MomsBeloeb" Type="Decimal" />
+          <Property Name="ProvisionInclMoms" Type="Decimal" />
+          <Property Name="UdbetalteGevinster" Type="Decimal" />
+          <Property Name="TidligereSaldo" Type="Decimal" />
+          <Property Name="Posteringer" Type="Decimal" />
+          <Property Name="BeloebIalt" Type="Decimal" />
+          <Property Name="Postering1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Postering2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Postering3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Postering4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Postering5" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProvisionAarTilDato" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="DateTime" Nullable="false" />
+          <Property Name="Tekst1" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+          <Property Name="Tekst2" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="timingtry">
+          <Key>
+            <PropertyRef Name="nummer" />
+            <PropertyRef Name="navn" />
+            <PropertyRef Name="dato" />
+          </Key>
+          <Property Name="nummer" Type="Int64" Nullable="false" />
+          <Property Name="navn" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="dato" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Traekning">
+          <Key>
+            <PropertyRef Name="Periode" />
+          </Key>
+          <Property Name="Periode" Type="Int32" Nullable="false" />
+          <Property Name="LodseddelNummer" Type="Int32" />
+          <Property Name="Beloeb" Type="Decimal" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FortunaModelStoreContainer" CdmEntityContainer="FortunaEntities">
+          <EntitySetMapping Name="Bank">
+            <EntityTypeMapping TypeName="FortunaModel.Bank">
+              <MappingFragment StoreEntitySet="Bank">
+                <ScalarProperty Name="idBank" ColumnName="idBank" />
+                <ScalarProperty Name="BankNavn" ColumnName="BankNavn" />
+                <ScalarProperty Name="BankAdresse" ColumnName="BankAdresse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bemaerkning">
+            <EntityTypeMapping TypeName="FortunaModel.Bemaerkning">
+              <MappingFragment StoreEntitySet="Bemaerkning">
+                <ScalarProperty Name="idBemaerkning" ColumnName="idBemaerkning" />
+                <ScalarProperty Name="StatiskValg" ColumnName="StatiskValg" />
+                <ScalarProperty Name="Bemaerkning1" ColumnName="Bemaerkning" />
+                <ScalarProperty Name="Dato" ColumnName="Dato" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+                <ScalarProperty Name="VariableValg" ColumnName="VariableValg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faelles_Forhandler">
+            <EntityTypeMapping TypeName="FortunaModel.Faelles_Forhandler">
+              <MappingFragment StoreEntitySet="Faelles_Forhandler">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="ll_number" ColumnName="ll_number" />
+                <ScalarProperty Name="vl_number" ColumnName="vl_number" />
+                <ScalarProperty Name="terminal" ColumnName="terminal" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+                <ScalarProperty Name="terminal2" ColumnName="terminal2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faelles_Spiller">
+            <EntityTypeMapping TypeName="FortunaModel.Faelles_Spiller">
+              <MappingFragment StoreEntitySet="Faelles_Spiller">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="giro" ColumnName="giro" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="terminal" ColumnName="terminal" />
+                <ScalarProperty Name="ll_customer" ColumnName="ll_customer" />
+                <ScalarProperty Name="vl_customer" ColumnName="vl_customer" />
+                <ScalarProperty Name="inactive" ColumnName="inactive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Forhandler">
+            <EntityTypeMapping TypeName="FortunaModel.Forhandler">
+              <MappingFragment StoreEntitySet="Forhandler">
+                <ScalarProperty Name="ForhandlerNummer" ColumnName="ForhandlerNummer" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Forretning" ColumnName="Forretning" />
+                <ScalarProperty Name="ForhAdresse1" ColumnName="ForhAdresse1" />
+                <ScalarProperty Name="ForhAdresse2" ColumnName="ForhAdresse2" />
+                <ScalarProperty Name="ForhPostnummer" ColumnName="ForhPostnummer" />
+                <ScalarProperty Name="ForhBy" ColumnName="ForhBy" />
+                <ScalarProperty Name="ForhLand" ColumnName="ForhLand" />
+                <ScalarProperty Name="ForhTelefon" ColumnName="ForhTelefon" />
+                <ScalarProperty Name="ForhMobil" ColumnName="ForhMobil" />
+                <ScalarProperty Name="ForhMail" ColumnName="ForhMail" />
+                <ScalarProperty Name="ForhWeb" ColumnName="ForhWeb" />
+                <ScalarProperty Name="PrivAdresse1" ColumnName="PrivAdresse1" />
+                <ScalarProperty Name="PrivAdresse2" ColumnName="PrivAdresse2" />
+                <ScalarProperty Name="PrivPostnummer" ColumnName="PrivPostnummer" />
+                <ScalarProperty Name="PrivBy" ColumnName="PrivBy" />
+                <ScalarProperty Name="PrivLand" ColumnName="PrivLand" />
+                <ScalarProperty Name="PrivTelefon" ColumnName="PrivTelefon" />
+                <ScalarProperty Name="PrivMobil" ColumnName="PrivMobil" />
+                <ScalarProperty Name="PrivMail" ColumnName="PrivMail" />
+                <ScalarProperty Name="PrivWeb" ColumnName="PrivWeb" />
+                <ScalarProperty Name="CPR" ColumnName="CPR" />
+                <ScalarProperty Name="CVR" ColumnName="CVR" />
+                <ScalarProperty Name="CPR_CVR" ColumnName="CPR-CVR" />
+                <ScalarProperty Name="Moms" ColumnName="Moms" />
+                <ScalarProperty Name="TiltraedelsesDato" ColumnName="TiltraedelsesDato" />
+                <ScalarProperty Name="AfgangsDato" ColumnName="AfgangsDato" />
+                <ScalarProperty Name="FlyttetFra" ColumnName="FlyttetFra" />
+                <ScalarProperty Name="FlyttetFraDato" ColumnName="FlyttetFraDato" />
+                <ScalarProperty Name="FlyttetTil" ColumnName="FlyttetTil" />
+                <ScalarProperty Name="FlyttetTilDato" ColumnName="FlyttetTilDato" />
+                <ScalarProperty Name="Leverandoerservice" ColumnName="Leverandoerservice" />
+                <ScalarProperty Name="LevKundenummer" ColumnName="LevKundenummer" />
+                <ScalarProperty Name="AfregningMail" ColumnName="AfregningMail" />
+                <ScalarProperty Name="Oplysninger" ColumnName="Oplysninger" />
+                <ScalarProperty Name="SalgProvisionSats" ColumnName="SalgProvisionSats" />
+                <ScalarProperty Name="PosteringerId" ColumnName="PosteringerId" />
+                <ScalarProperty Name="ForhandlerKontoRegNr" ColumnName="ForhandlerKontoRegNr" />
+                <ScalarProperty Name="ForhandlerKontoNr" ColumnName="ForhandlerKontoNr" />
+                <ScalarProperty Name="GevinstKontoRegNr" ColumnName="GevinstKontoRegNr" />
+                <ScalarProperty Name="GevinstKontoNr" ColumnName="GevinstKontoNr" />
+                <ScalarProperty Name="LeverandoerRegNr" ColumnName="LeverandoerRegNr" />
+                <ScalarProperty Name="LeverandoerKontoNr" ColumnName="LeverandoerKontoNr" />
+                <ScalarProperty Name="GiroKontoNr" ColumnName="GiroKontoNr" />
+                <ScalarProperty Name="BemaerkningsId" ColumnName="BemaerkningsId" />
+                <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Terminal2" ColumnName="Terminal2" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+                <ScalarProperty Name="BankGaranti" ColumnName="BankGaranti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LodSeddel">
+            <EntityTypeMapping TypeName="FortunaModel.LodSeddel">
+              <MappingFragment StoreEntitySet="LodSeddel">
+                <ScalarProperty Name="idLodSeddel" ColumnName="idLodSeddel" />
+                <ScalarProperty Name="LodNummer" ColumnName="LodNummer" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
+                <ScalarProperty Name="Periode" ColumnName="Periode" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Traekning" ColumnName="Traekning" />
+                <ScalarProperty Name="Udfaset" ColumnName="Udfaset" />
+                <ScalarProperty Name="SpillerId" ColumnName="SpillerId" />
+                <ScalarProperty Name="SalgsBerretigetForhandlerId" ColumnName="SalgsBerretigetForhandlerId" />
+                <ScalarProperty Name="PrisLow" ColumnName="PrisLow" />
+                <ScalarProperty Name="PrisHigh" ColumnName="PrisHigh" />
+                <ScalarProperty Name="Solgt" ColumnName="Solgt" />
+                <ScalarProperty Name="Kontrolciffer" ColumnName="Kontrolciffer" />
+                <ScalarProperty Name="LodseddelPrintet" ColumnName="LodseddelPrintet" />
+                <ScalarProperty Name="SaelgendeForhandlerId" ColumnName="SaelgendeForhandlerId" />
+                <ScalarProperty Name="SalgsDato" ColumnName="SalgsDato" />
+                <ScalarProperty Name="Reserveret" ColumnName="Reserveret" />
+                <ScalarProperty Name="Blokeret" ColumnName="Blokeret" />
+                <ScalarProperty Name="PbsSpiller" ColumnName="PbsSpiller" />
+                <ScalarProperty Name="PbsAftaleNummer" ColumnName="PbsAftaleNummer" />
+                <ScalarProperty Name="PbsRegNr" ColumnName="PbsRegNr" />
+                <ScalarProperty Name="PbsKontoNummer" ColumnName="PbsKontoNummer" />
+                <ScalarProperty Name="PbsBankId" ColumnName="PbsBankId" />
+                <ScalarProperty Name="PbsProvisionsForhandlerId" ColumnName="PbsProvisionsForhandlerId" />
+                <ScalarProperty Name="PbsProvisionsDato" ColumnName="PbsProvisionsDato" />
+                <ScalarProperty Name="PbsProvisionsSats" ColumnName="PbsProvisionsSats" />
+                <ScalarProperty Name="Gevinst1" ColumnName="Gevinst1" />
+                <ScalarProperty Name="GevinstUdbetaltManuelt1" ColumnName="GevinstUdbetaltManuelt1" />
+                <ScalarProperty Name="GevinstUdbetaltDato1" ColumnName="GevinstUdbetaltDato1" />
+                <ScalarProperty Name="GevinstAfregningsDato1" ColumnName="GevinstAfregningsDato1" />
+                <ScalarProperty Name="ForaeldetGevinst1" ColumnName="ForaeldetGevinst1" />
+                <ScalarProperty Name="ForaeldetGevinsDato1" ColumnName="ForaeldetGevinsDato1" />
+                <ScalarProperty Name="GevinstUdbetaltForhandler1" ColumnName="GevinstUdbetaltForhandler1" />
+                <ScalarProperty Name="Gevinst2" ColumnName="Gevinst2" />
+                <ScalarProperty Name="GevinstUdbetaltManuelt2" ColumnName="GevinstUdbetaltManuelt2" />
+                <ScalarProperty Name="GevinstUdbetaltDato2" ColumnName="GevinstUdbetaltDato2" />
+                <ScalarProperty Name="GevinstAfregningsDato2" ColumnName="GevinstAfregningsDato2" />
+                <ScalarProperty Name="ForaeldetGevinst2" ColumnName="ForaeldetGevinst2" />
+                <ScalarProperty Name="ForaeldetGevinsDato2" ColumnName="ForaeldetGevinsDato2" />
+                <ScalarProperty Name="GevinstUdbetaltForhandler2" ColumnName="GevinstUdbetaltForhandler2" />
+                <ScalarProperty Name="SidstVist" ColumnName="SidstVist" />
+                <ScalarProperty Name="TagetTilIndtaegt" ColumnName="TagetTilIndtaegt" />
+                <ScalarProperty Name="AfregningsDato" ColumnName="AfregningsDato" />
+                <ScalarProperty Name="HistorikId" ColumnName="HistorikId" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+                <ScalarProperty Name="ResNySerie" ColumnName="ResNySerie" />
+                <ScalarProperty Name="PbsAfmeldtBank" ColumnName="PbsAfmeldtBank" />
+                <ScalarProperty Name="RegSalg" ColumnName="RegSalg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PeriodeSkift">
+            <EntityTypeMapping TypeName="FortunaModel.PeriodeSkift">
+              <MappingFragment StoreEntitySet="PeriodeSkift">
+                <ScalarProperty Name="Periode" ColumnName="Periode" />
+                <ScalarProperty Name="Dato" ColumnName="Dato" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="StartDato" ColumnName="StartDato" />
+                <ScalarProperty Name="SlutDato" ColumnName="SlutDato" />
+                <ScalarProperty Name="AfregningsDato" ColumnName="AfregningsDato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posteringer">
+            <EntityTypeMapping TypeName="FortunaModel.Posteringer">
+              <MappingFragment StoreEntitySet="Posteringer">
+                <ScalarProperty Name="idPosteringer" ColumnName="idPosteringer" />
+                <ScalarProperty Name="Dato" ColumnName="Dato" />
+                <ScalarProperty Name="Beloeb" ColumnName="Beloeb" />
+                <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
+                <ScalarProperty Name="Periode" ColumnName="Periode" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostNumre">
+            <EntityTypeMapping TypeName="FortunaModel.PostNumre">
+              <MappingFragment StoreEntitySet="PostNumre">
+                <ScalarProperty Name="Postnummer" ColumnName="Postnummer" />
+                <ScalarProperty Name="By" ColumnName="By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Satser">
+            <EntityTypeMapping TypeName="FortunaModel.Satser">
+              <MappingFragment StoreEntitySet="Satser">
+                <ScalarProperty Name="idSatser" ColumnName="idSatser" />
+                <ScalarProperty Name="SatsBeskrivelse" ColumnName="SatsBeskrivelse" />
+                <ScalarProperty Name="Sats" ColumnName="Sats" />
+                <ScalarProperty Name="Dato" ColumnName="Dato" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+                <ScalarProperty Name="Var" ColumnName="Var" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spiller">
+            <EntityTypeMapping TypeName="FortunaModel.Spiller">
+              <MappingFragment StoreEntitySet="Spiller">
+                <ScalarProperty Name="idSpiller" ColumnName="idSpiller" />
+                <ScalarProperty Name="Fornavn" ColumnName="Fornavn" />
+                <ScalarProperty Name="Efternavn" ColumnName="Efternavn" />
+                <ScalarProperty Name="Adresse1" ColumnName="Adresse1" />
+                <ScalarProperty Name="Adresse2" ColumnName="Adresse2" />
+                <ScalarProperty Name="PostNummerId" ColumnName="PostNummerId" />
+                <ScalarProperty Name="By" ColumnName="By" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mobil" ColumnName="Mobil" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="OprettelsesDato" ColumnName="OprettelsesDato" />
+                <ScalarProperty Name="AfgangsDato" ColumnName="AfgangsDato" />
+                <ScalarProperty Name="Noter" ColumnName="Noter" />
+                <ScalarProperty Name="FoedtDato" ColumnName="FoedtDato" />
+                <ScalarProperty Name="BemaerkningsId" ColumnName="BemaerkningsId" />
+                <ScalarProperty Name="OprettetAf" ColumnName="OprettetAf" />
+                <ScalarProperty Name="AendretAf" ColumnName="AendretAf" />
+                <ScalarProperty Name="AendretDato" ColumnName="AendretDato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tekster">
+            <EntityTypeMapping TypeName="FortunaModel.Tekster">
+              <MappingFragment StoreEntitySet="Tekster">
+                <ScalarProperty Name="idTekster" ColumnName="idTekster" />
+                <ScalarProperty Name="Art" ColumnName="Art" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+                <ScalarProperty Name="Vaerdi" ColumnName="Vaerdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeksterBreve">
+            <EntityTypeMapping TypeName="FortunaModel.TeksterBreve">
+              <MappingFragment StoreEntitySet="TeksterBreve">
+                <ScalarProperty Name="ForhandlerNummer" ColumnName="ForhandlerNummer" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Traekning" ColumnName="Traekning" />
+                <ScalarProperty Name="CVR_LL" ColumnName="CVR-LL" />
+                <ScalarProperty Name="ForhandlerNavn" ColumnName="ForhandlerNavn" />
+                <ScalarProperty Name="ForhandlerAdresse" ColumnName="ForhandlerAdresse" />
+                <ScalarProperty Name="ForhandlerPostNummer" ColumnName="ForhandlerPostNummer" />
+                <ScalarProperty Name="ForhandlerBy" ColumnName="ForhandlerBy" />
+                <ScalarProperty Name="CPR_CVR" ColumnName="CPR_CVR" />
+                <ScalarProperty Name="PeriodeStart" ColumnName="PeriodeStart" />
+                <ScalarProperty Name="PeriodeSlut" ColumnName="PeriodeSlut" />
+                <ScalarProperty Name="SalgTrk1" ColumnName="SalgTrk1" />
+                <ScalarProperty Name="SalgTrk2" ColumnName="SalgTrk2" />
+                <ScalarProperty Name="SalgTrk3" ColumnName="SalgTrk3" />
+                <ScalarProperty Name="SalgTrk4" ColumnName="SalgTrk4" />
+                <ScalarProperty Name="SalgTrk5" ColumnName="SalgTrk5" />
+                <ScalarProperty Name="SalgTrk6" ColumnName="SalgTrk6" />
+                <ScalarProperty Name="SalgAntalHele1" ColumnName="SalgAntalHele1" />
+                <ScalarProperty Name="SalgAntalHele2" ColumnName="SalgAntalHele2" />
+                <ScalarProperty Name="SalgAntalHele3" ColumnName="SalgAntalHele3" />
+                <ScalarProperty Name="SalgAntalHele4" ColumnName="SalgAntalHele4" />
+                <ScalarProperty Name="SalgAntalHele5" ColumnName="SalgAntalHele5" />
+                <ScalarProperty Name="SalgAntalHele6" ColumnName="SalgAntalHele6" />
+                <ScalarProperty Name="SalgAntalHalve1" ColumnName="SalgAntalHalve1" />
+                <ScalarProperty Name="SalgAntalHalve2" ColumnName="SalgAntalHalve2" />
+                <ScalarProperty Name="SalgAntalHalve3" ColumnName="SalgAntalHalve3" />
+                <ScalarProperty Name="SalgAntalHalve4" ColumnName="SalgAntalHalve4" />
+                <ScalarProperty Name="SalgAntalHalve5" ColumnName="SalgAntalHalve5" />
+                <ScalarProperty Name="SalgAntalHalve6" ColumnName="SalgAntalHalve6" />
+                <ScalarProperty Name="SalgAntalPbsHele" ColumnName="SalgAntalPbsHele" />
+                <ScalarProperty Name="SalgAntalPbsHalve" ColumnName="SalgAntalPbsHalve" />
+                <ScalarProperty Name="PrisHel1" ColumnName="PrisHel1" />
+                <ScalarProperty Name="PrisHel2" ColumnName="PrisHel2" />
+                <ScalarProperty Name="PrisHel3" ColumnName="PrisHel3" />
+                <ScalarProperty Name="PrisHel4" ColumnName="PrisHel4" />
+                <ScalarProperty Name="PrisHel5" ColumnName="PrisHel5" />
+                <ScalarProperty Name="PrisHel6" ColumnName="PrisHel6" />
+                <ScalarProperty Name="PrisHalv1" ColumnName="PrisHalv1" />
+                <ScalarProperty Name="PrisHalv2" ColumnName="PrisHalv2" />
+                <ScalarProperty Name="PrisHalv3" ColumnName="PrisHalv3" />
+                <ScalarProperty Name="PrisHalv4" ColumnName="PrisHalv4" />
+                <ScalarProperty Name="PrisHalv5" ColumnName="PrisHalv5" />
+                <ScalarProperty Name="PrisHalv6" ColumnName="PrisHalv6" />
+                <ScalarProperty Name="PrisHelPbs" ColumnName="PrisHelPbs" />
+                <ScalarProperty Name="PrisHalvPbs" ColumnName="PrisHalvPbs" />
+                <ScalarProperty Name="SalgTrkPbs" ColumnName="SalgTrkPbs" />
+                <ScalarProperty Name="SalgPrisHel1" ColumnName="SalgPrisHel1" />
+                <ScalarProperty Name="SalgPrisHel2" ColumnName="SalgPrisHel2" />
+                <ScalarProperty Name="SalgPrisHel3" ColumnName="SalgPrisHel3" />
+                <ScalarProperty Name="SalgPrisHel4" ColumnName="SalgPrisHel4" />
+                <ScalarProperty Name="SalgPrisHel5" ColumnName="SalgPrisHel5" />
+                <ScalarProperty Name="SalgPrisHel6" ColumnName="SalgPrisHel6" />
+                <ScalarProperty Name="SalgPrisHalv1" ColumnName="SalgPrisHalv1" />
+                <ScalarProperty Name="SalgPrisHalv2" ColumnName="SalgPrisHalv2" />
+                <ScalarProperty Name="SalgPrisHalv3" ColumnName="SalgPrisHalv3" />
+                <ScalarProperty Name="SalgPrisHalv4" ColumnName="SalgPrisHalv4" />
+                <ScalarProperty Name="SalgPrisHalv5" ColumnName="SalgPrisHalv5" />
+                <ScalarProperty Name="SalgPrisHalv6" ColumnName="SalgPrisHalv6" />
+                <ScalarProperty Name="SalgPrisPbsHele" ColumnName="SalgPrisPbsHele" />
+                <ScalarProperty Name="SalgPrisPbsHalve" ColumnName="SalgPrisPbsHalve" />
+                <ScalarProperty Name="SalgPrisIalt1" ColumnName="SalgPrisIalt1" />
+                <ScalarProperty Name="SalgPrisIalt2" ColumnName="SalgPrisIalt2" />
+                <ScalarProperty Name="SalgPrisIalt3" ColumnName="SalgPrisIalt3" />
+                <ScalarProperty Name="SalgPrisIalt4" ColumnName="SalgPrisIalt4" />
+                <ScalarProperty Name="SalgPrisIalt5" ColumnName="SalgPrisIalt5" />
+                <ScalarProperty Name="SalgPrisIalt6" ColumnName="SalgPrisIalt6" />
+                <ScalarProperty Name="SalgPrisIalt" ColumnName="SalgPrisIalt" />
+                <ScalarProperty Name="SalgPrisIaltPbs" ColumnName="SalgPrisIaltPbs" />
+                <ScalarProperty Name="ProvisionProcent" ColumnName="ProvisionProcent" />
+                <ScalarProperty Name="ProvisionPbsProcent" ColumnName="ProvisionPbsProcent" />
+                <ScalarProperty Name="ProvisionSalg" ColumnName="ProvisionSalg" />
+                <ScalarProperty Name="ProvisionPbs" ColumnName="ProvisionPbs" />
+                <ScalarProperty Name="ProvisionTilMoms" ColumnName="ProvisionTilMoms" />
+                <ScalarProperty Name="MomsProcent" ColumnName="MomsProcent" />
+                <ScalarProperty Name="MomsBeloeb" ColumnName="MomsBeloeb" />
+                <ScalarProperty Name="ProvisionInclMoms" ColumnName="ProvisionInclMoms" />
+                <ScalarProperty Name="UdbetalteGevinster" ColumnName="UdbetalteGevinster" />
+                <ScalarProperty Name="TidligereSaldo" ColumnName="TidligereSaldo" />
+                <ScalarProperty Name="Posteringer" ColumnName="Posteringer" />
+                <ScalarProperty Name="BeloebIalt" ColumnName="BeloebIalt" />
+                <ScalarProperty Name="Postering1" ColumnName="Postering1" />
+                <ScalarProperty Name="Postering2" ColumnName="Postering2" />
+                <ScalarProperty Name="Postering3" ColumnName="Postering3" />
+                <ScalarProperty Name="Postering4" ColumnName="Postering4" />
+                <ScalarProperty Name="Postering5" ColumnName="Postering5" />
+                <ScalarProperty Name="ProvisionAarTilDato" ColumnName="ProvisionAarTilDato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temp">
+            <EntityTypeMapping TypeName="FortunaModel.Temp">
+              <MappingFragment StoreEntitySet="Temp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tekst1" ColumnName="Tekst1" />
+                <ScalarProperty Name="Tekst2" ColumnName="Tekst2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timingtry">
+            <EntityTypeMapping TypeName="FortunaModel.timingtry">
+              <MappingFragment StoreEntitySet="timingtry">
+                <ScalarProperty Name="nummer" ColumnName="nummer" />
+                <ScalarProperty Name="navn" ColumnName="navn" />
+                <ScalarProperty Name="dato" ColumnName="dato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Traekning">
+            <EntityTypeMapping TypeName="FortunaModel.Traekning">
+              <MappingFragment StoreEntitySet="Traekning">
+                <ScalarProperty Name="Periode" ColumnName="Periode" />
+                <ScalarProperty Name="LodseddelNummer" ColumnName="LodseddelNummer" />
+                <ScalarProperty Name="Beloeb" ColumnName="Beloeb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
